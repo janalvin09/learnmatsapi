@@ -8,6 +8,7 @@ import { ClasslevelModule } from './classlevel/classlevel.module';
 import { MaterialModule } from './material/material.module';
 import { QuestionModule } from './question/question.module';
 import { AnswerModule } from './answer/answer.module';
+import { ResultModule } from './result/result.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { AnswerModule } from './answer/answer.module';
     MaterialModule,
     QuestionModule,
     AnswerModule,
+    ResultModule,
   ],
 })
 export class AppModule {}
