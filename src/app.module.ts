@@ -9,6 +9,7 @@ import { MaterialModule } from './material/material.module';
 import { QuestionModule } from './question/question.module';
 import { AnswerModule } from './answer/answer.module';
 import { ResultModule } from './result/result.module';
+import { LanguageModule } from './language/language.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { ResultModule } from './result/result.module';
     QuestionModule,
     AnswerModule,
     ResultModule,
+    LanguageModule,
   ],
 })
 export class AppModule {}

@@ -102,3 +102,24 @@ model Result {
 
   @@map("results")
 }
+
+model Language {
+  id        Int      @id @default(autoincrement())
+  lang_code String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  translations Tranlation[]
+}
+
+model Tranlation {
+  id          Int      @id @default(autoincrement())
+  word        String
+  translation String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+
+  language_id Int
+  language    Language @relation(fields: [language_id], references: [id])
+}
