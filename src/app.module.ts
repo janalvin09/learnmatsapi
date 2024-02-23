@@ -10,6 +10,7 @@ import { QuestionModule } from './question/question.module';
 import { AnswerModule } from './answer/answer.module';
 import { ResultModule } from './result/result.module';
 import { LanguageModule } from './language/language.module';
+import { TranslationModule } from './translation/translation.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { LanguageModule } from './language/language.module';
     AnswerModule,
     ResultModule,
     LanguageModule,
+    TranslationModule,
   ],
 })
 export class AppModule {}
