@@ -7,6 +7,28 @@ import * as argon from 'argon2'
 export class UserService {
   constructor(private prisma: PrismaService) {}
 
+  getAllUsers() {
+    const users =  this.prisma.user.findMany({
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        createdAt: true,
+        updatedAt: true
+      },
+      where: {
+        name: {
+          not: "admin"
+        }
+      },
+      orderBy: {
+        id: "asc"
+      }
+    })
+
+    return users
+  }
+
   async UpdateUser (user_id: number, dto: UpdateUserDto) {
 
     if(dto.password) {
