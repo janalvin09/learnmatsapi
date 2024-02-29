@@ -26,4 +26,12 @@ export class UserController {
     @Body() dto: UpdateUserDto) {
       return this.userService.UpdateUser(user_id, dto)
   } 
+
+  
+  @Get('get-users')
+  getAllUsers() {
+    return this.userService.getAllUsers()
+  }
 }
+
+  
