@@ -6,6 +6,14 @@ import { createResultDto, editResultDto, getResultByMatClasslevelDto } from './d
 export class ResultService {
   constructor(private prisma: PrismaService) {}
 
+  getAllResults() {
+    return this.prisma.result.findMany({
+      orderBy: {
+        id: "asc"
+      }
+    })
+  }
+
   getResults(user_id: number, dto?: getResultByMatClasslevelDto) {
 
     if(dto.material_id && dto.classlevel_id) {
