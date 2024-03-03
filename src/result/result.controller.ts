@@ -21,6 +21,12 @@ import { getResultByMatClasslevelDto, createResultDto, editResultDto } from './d
 export class ResultController {
   constructor(private resultService: ResultService) {}
 
+
+  @Get('get-all-results')
+  getAllResults(){
+    return this.resultService.getAllResults()
+  }
+
   @Get('get-results')
   getResults(
     @GetUser('id') user_id: number,
