@@ -41,7 +41,10 @@ $ npx prisma generate
 $ yarn run start
 
 # watch mode
-$ yarn run start:dev
+$ yarn start:dev
+
+# prisma studio
+$ yarn prisma:dev
 
 # production mode
 $ yarn run start:prod
