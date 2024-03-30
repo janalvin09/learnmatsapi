@@ -6,13 +6,16 @@ export class getMaterialByClasslevelDto {
   classlevel_id?: number
 }
 
-
 export class createMaterialDto {
   
   @IsNumber()
   @IsNotEmpty()
   classlevel_id: number
 
+  @IsNumber()
+  @IsNotEmpty()
+  category_id: number
+  
   @IsString()
   @IsNotEmpty()
   name:string
@@ -20,6 +23,10 @@ export class createMaterialDto {
   @IsString()
   @IsNotEmpty()
   material_icon:string
+
+  @IsString()
+  @IsNotEmpty()
+  material_description_title: string
 
   @IsString()
   @IsNotEmpty()
@@ -36,6 +43,10 @@ export class editMaterialDto {
   @IsNotEmpty()
   classlevel_id: number
 
+  @IsNumber()
+  @IsNotEmpty()
+  category_id: number
+
   @IsString()
   @IsOptional()
   name?:string
@@ -43,6 +54,10 @@ export class editMaterialDto {
   @IsString()
   @IsOptional()
   material_icon?:string
+
+  @IsString()
+  @IsOptional()
+  material_description_title?: string
 
   @IsString()
   @IsOptional()
