@@ -31,24 +31,40 @@ model Classlevel {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  materials Material[]
-  questions Question[]
-  results   Result[]
+  categories Category[]
+  materials  Material[]
+  questions  Question[]
+  results    Result[]
 
   @@map("classlevels")
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  classlevel_id Int
+  classlevel    Classlevel @relation(fields: [classlevel_id], references: [id])
+
+  materials Material[]
 }
 
 model Material {
   id                         Int      @id @default(autoincrement())
   name                       String
   material_icon              String
+  material_description_title String
   material_description       String
   material_description_image String
   createdAt                  DateTime @default(now())
   updatedAt                  DateTime @default(now())
 
   classlevel_id Int
+  category_id   Int
   classlevel    Classlevel @relation(fields: [classlevel_id], references: [id])
+  category      Category   @relation(fields: [category_id], references: [id])
 
   questions Question[]
   results   Result[]

@@ -11,6 +11,7 @@ import { AnswerModule } from './answer/answer.module';
 import { ResultModule } from './result/result.module';
 import { LanguageModule } from './language/language.module';
 import { TranslationModule } from './translation/translation.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { TranslationModule } from './translation/translation.module';
     ResultModule,
     LanguageModule,
     TranslationModule,
+    CategoryModule,
   ],
 })
 export class AppModule {}
